@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.CreateAccountHolderRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderRequest do
   @moduledoc """
   
   """
@@ -21,22 +21,22 @@ defmodule Adyen.Model.CreateAccountHolderRequest do
 
   @type t :: %__MODULE__{
     :"accountHolderCode" => String.t,
-    :"accountHolderDetails" => Adyen.Model.AccountHolderDetails.t,
+    :"accountHolderDetails" => AdyenForPlatforms:AccountAPI.Model.AccountHolderDetails1.t,
     :"createDefaultAccount" => boolean() | nil,
     :"description" => String.t | nil,
-    :"legalEntity" => Adyen.Model.LegalEntity3.t,
+    :"legalEntity" => AdyenForPlatforms:AccountAPI.Model.LegalEntity.t,
     :"primaryCurrency" => String.t | nil,
     :"processingTier" => integer() | nil,
     :"verificationProfile" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.CreateAccountHolderRequest do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderRequest do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"accountHolderDetails", :struct, Adyen.Model.AccountHolderDetails, options)
-    |> deserialize(:"legalEntity", :struct, Adyen.Model.LegalEntity3, options)
+    |> deserialize(:"accountHolderDetails", :struct, AdyenForPlatforms:AccountAPI.Model.AccountHolderDetails1, options)
+    |> deserialize(:"legalEntity", :struct, AdyenForPlatforms:AccountAPI.Model.LegalEntity, options)
   end
 end
 

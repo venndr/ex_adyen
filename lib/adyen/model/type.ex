@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Type do
+defmodule AdyenForPlatforms:AccountAPI.Model.Type do
   @moduledoc """
   The type of the document. Possible values: **ID**, **DRIVINGLICENSE**, **PASSPORT**, **SOCIALSECURITY**, **VISA**.  To delete an existing entry for a document `type`, send only the `type` field in your request.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Type do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Type do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Type do
   def decode(value, _options) do
     value
   end

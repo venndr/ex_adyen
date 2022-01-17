@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.GetTaxFormRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.GetTaxFormRequest do
   @moduledoc """
   
   """
@@ -21,7 +21,7 @@ defmodule Adyen.Model.GetTaxFormRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.GetTaxFormRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.GetTaxFormRequest do
   def decode(value, _options) do
     value
   end

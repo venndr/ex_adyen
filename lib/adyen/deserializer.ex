@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Deserializer do
+defmodule AdyenForPlatforms:AccountAPI.Deserializer do
   @moduledoc """
   Helper functions for deserializing responses into models
   """

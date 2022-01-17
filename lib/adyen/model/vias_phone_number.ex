@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ViasPhoneNumber do
+defmodule AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber do
   @moduledoc """
   
   """
@@ -17,15 +17,15 @@ defmodule Adyen.Model.ViasPhoneNumber do
   @type t :: %__MODULE__{
     :"phoneCountryCode" => String.t,
     :"phoneNumber" => String.t,
-    :"phoneType" => Adyen.Model.PhoneType.t | nil
+    :"phoneType" => AdyenForPlatforms:AccountAPI.Model.PhoneType.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ViasPhoneNumber do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"phoneType", :struct, Adyen.Model.PhoneType, options)
+    |> deserialize(:"phoneType", :struct, AdyenForPlatforms:AccountAPI.Model.PhoneType, options)
   end
 end
 

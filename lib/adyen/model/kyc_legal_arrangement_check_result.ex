@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.KycLegalArrangementCheckResult do
+defmodule AdyenForPlatforms:AccountAPI.Model.KycLegalArrangementCheckResult do
   @moduledoc """
   
   """
@@ -14,16 +14,16 @@ defmodule Adyen.Model.KycLegalArrangementCheckResult do
   ]
 
   @type t :: %__MODULE__{
-    :"checks" => [Adyen.Model.KycCheckStatusData.t] | nil,
+    :"checks" => [AdyenForPlatforms:AccountAPI.Model.KycCheckStatusData.t] | nil,
     :"legalArrangementCode" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.KycLegalArrangementCheckResult do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.KycLegalArrangementCheckResult do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"checks", :list, Adyen.Model.KycCheckStatusData, options)
+    |> deserialize(:"checks", :list, AdyenForPlatforms:AccountAPI.Model.KycCheckStatusData, options)
   end
 end
 

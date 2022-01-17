@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ViasName do
+defmodule AdyenForPlatforms:AccountAPI.Model.ViasName do
   @moduledoc """
   
   """
@@ -17,17 +17,17 @@ defmodule Adyen.Model.ViasName do
 
   @type t :: %__MODULE__{
     :"firstName" => String.t,
-    :"gender" => Adyen.Model.Gender.t | nil,
+    :"gender" => AdyenForPlatforms:AccountAPI.Model.Gender.t | nil,
     :"infix" => String.t | nil,
     :"lastName" => String.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ViasName do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ViasName do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"gender", :struct, Adyen.Model.Gender, options)
+    |> deserialize(:"gender", :struct, AdyenForPlatforms:AccountAPI.Model.Gender, options)
   end
 end
 

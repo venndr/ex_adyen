@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.LegalArrangementEntityDetail do
+defmodule AdyenForPlatforms:AccountAPI.Model.LegalArrangementEntityDetail do
   @moduledoc """
   
   """
@@ -23,30 +23,30 @@ defmodule Adyen.Model.LegalArrangementEntityDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"address" => Adyen.Model.ViasAddress.t | nil,
-    :"businessDetails" => Adyen.Model.BusinessDetails.t | nil,
+    :"address" => AdyenForPlatforms:AccountAPI.Model.ViasAddress5.t | nil,
+    :"businessDetails" => AdyenForPlatforms:AccountAPI.Model.BusinessDetails1.t | nil,
     :"email" => String.t | nil,
     :"fullPhoneNumber" => String.t | nil,
-    :"individualDetails" => Adyen.Model.IndividualDetails.t | nil,
+    :"individualDetails" => AdyenForPlatforms:AccountAPI.Model.IndividualDetails1.t | nil,
     :"legalArrangementEntityCode" => String.t | nil,
     :"legalArrangementEntityReference" => String.t | nil,
-    :"legalArrangementMembers" => [Adyen.Model.LegalArrangementMember.t] | nil,
-    :"legalEntityType" => Adyen.Model.LegalEntityType.t,
-    :"phoneNumber" => Adyen.Model.ViasPhoneNumber.t | nil,
+    :"legalArrangementMembers" => [AdyenForPlatforms:AccountAPI.Model.LegalArrangementMember.t] | nil,
+    :"legalEntityType" => AdyenForPlatforms:AccountAPI.Model.LegalEntityType.t,
+    :"phoneNumber" => AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber2.t | nil,
     :"webAddress" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.LegalArrangementEntityDetail do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.LegalArrangementEntityDetail do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"address", :struct, Adyen.Model.ViasAddress, options)
-    |> deserialize(:"businessDetails", :struct, Adyen.Model.BusinessDetails, options)
-    |> deserialize(:"individualDetails", :struct, Adyen.Model.IndividualDetails, options)
-    |> deserialize(:"legalArrangementMembers", :list, Adyen.Model.LegalArrangementMember, options)
-    |> deserialize(:"legalEntityType", :struct, Adyen.Model.LegalEntityType, options)
-    |> deserialize(:"phoneNumber", :struct, Adyen.Model.ViasPhoneNumber, options)
+    |> deserialize(:"address", :struct, AdyenForPlatforms:AccountAPI.Model.ViasAddress5, options)
+    |> deserialize(:"businessDetails", :struct, AdyenForPlatforms:AccountAPI.Model.BusinessDetails1, options)
+    |> deserialize(:"individualDetails", :struct, AdyenForPlatforms:AccountAPI.Model.IndividualDetails1, options)
+    |> deserialize(:"legalArrangementMembers", :list, AdyenForPlatforms:AccountAPI.Model.LegalArrangementMember, options)
+    |> deserialize(:"legalEntityType", :struct, AdyenForPlatforms:AccountAPI.Model.LegalEntityType, options)
+    |> deserialize(:"phoneNumber", :struct, AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber2, options)
   end
 end
 

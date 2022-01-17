@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Action do
+defmodule AdyenForPlatforms:AccountAPI.Model.Action do
   @moduledoc """
   Direction on how to handle any payouts that have already been scheduled. Permitted values: * `CLOSE` will close the existing batch of payouts. * `UPDATE` will reschedule the existing batch to the new schedule. * `NOTHING` (**default**) will allow the payout to proceed.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Action do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Action do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Action do
   def decode(value, _options) do
     value
   end

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.LegalEntity2 do
+defmodule AdyenForPlatforms:AccountAPI.Model.LegalEntity2 do
   @moduledoc """
   The legal entity of the account holder.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.LegalEntity2 do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.LegalEntity2 do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.LegalEntity2 do
   def decode(value, _options) do
     value
   end

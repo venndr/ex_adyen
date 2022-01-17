@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.StateType do
+defmodule AdyenForPlatforms:AccountAPI.Model.StateType do
   @moduledoc """
   The state to be updated. >Permitted values are: `Processing`, `Payout`
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.StateType do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.StateType do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.StateType do
   def decode(value, _options) do
     value
   end

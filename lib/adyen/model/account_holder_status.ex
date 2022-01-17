@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.AccountHolderStatus do
+defmodule AdyenForPlatforms:AccountAPI.Model.AccountHolderStatus do
   @moduledoc """
   
   """
@@ -17,22 +17,22 @@ defmodule Adyen.Model.AccountHolderStatus do
   ]
 
   @type t :: %__MODULE__{
-    :"events" => [Adyen.Model.AccountEvent.t] | nil,
-    :"payoutState" => Adyen.Model.AccountPayoutState.t | nil,
-    :"processingState" => Adyen.Model.AccountProcessingState.t | nil,
-    :"status" => Adyen.Model.Status1.t,
+    :"events" => [AdyenForPlatforms:AccountAPI.Model.AccountEvent.t] | nil,
+    :"payoutState" => AdyenForPlatforms:AccountAPI.Model.AccountPayoutState2.t | nil,
+    :"processingState" => AdyenForPlatforms:AccountAPI.Model.AccountProcessingState2.t | nil,
+    :"status" => AdyenForPlatforms:AccountAPI.Model.Status1.t,
     :"statusReason" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.AccountHolderStatus do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.AccountHolderStatus do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"events", :list, Adyen.Model.AccountEvent, options)
-    |> deserialize(:"payoutState", :struct, Adyen.Model.AccountPayoutState, options)
-    |> deserialize(:"processingState", :struct, Adyen.Model.AccountProcessingState, options)
-    |> deserialize(:"status", :struct, Adyen.Model.Status1, options)
+    |> deserialize(:"events", :list, AdyenForPlatforms:AccountAPI.Model.AccountEvent, options)
+    |> deserialize(:"payoutState", :struct, AdyenForPlatforms:AccountAPI.Model.AccountPayoutState2, options)
+    |> deserialize(:"processingState", :struct, AdyenForPlatforms:AccountAPI.Model.AccountProcessingState2, options)
+    |> deserialize(:"status", :struct, AdyenForPlatforms:AccountAPI.Model.Status1, options)
   end
 end
 

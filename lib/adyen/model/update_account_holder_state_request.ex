@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.UpdateAccountHolderStateRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderStateRequest do
   @moduledoc """
   
   """
@@ -19,15 +19,15 @@ defmodule Adyen.Model.UpdateAccountHolderStateRequest do
     :"accountHolderCode" => String.t,
     :"disable" => boolean(),
     :"reason" => String.t | nil,
-    :"stateType" => Adyen.Model.StateType.t
+    :"stateType" => AdyenForPlatforms:AccountAPI.Model.StateType.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.UpdateAccountHolderStateRequest do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderStateRequest do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"stateType", :struct, Adyen.Model.StateType, options)
+    |> deserialize(:"stateType", :struct, AdyenForPlatforms:AccountAPI.Model.StateType, options)
   end
 end
 

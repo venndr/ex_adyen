@@ -2,156 +2,14 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Api.AccountHolders do
+defmodule AdyenForPlatforms:AccountAPI.Api.AccountHolders do
   @moduledoc """
   API calls for all endpoints tagged `AccountHolders`.
   """
 
-  alias Adyen.Connection
-  import Adyen.RequestBuilder
+  alias AdyenForPlatforms:AccountAPI.Connection
+  import AdyenForPlatforms:AccountAPI.RequestBuilder
 
-
-  @doc """
-  get-accountHolders-id
-  Returns a specific account holder.
-
-  ## Parameters
-
-  - connection (Adyen.Connection): Connection to server
-  - id (String.t): Unique identifier of the account holder.
-  - opts (KeywordList): [optional] Optional parameters
-  ## Returns
-
-  {:ok, Adyen.Model.AccountHolder1.t} on success
-  {:error, Tesla.Env.t} on failure
-  """
-  @spec get_account_holders_id(Tesla.Env.client, String.t, keyword()) :: {:ok, Adyen.Model.AccountHolder1.t} | {:ok, Adyen.Model.RestServiceError.t} | {:error, Tesla.Env.t}
-  def get_account_holders_id(connection, id, _opts \\ []) do
-    %{}
-    |> method(:get)
-    |> url("/accountHolders/#{id}")
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> evaluate_response([
-      { 200, %Adyen.Model.AccountHolder1{}},
-      { 400, %Adyen.Model.RestServiceError{}},
-      { 401, %Adyen.Model.RestServiceError{}},
-      { 403, %Adyen.Model.RestServiceError{}},
-      { 422, %Adyen.Model.RestServiceError{}},
-      { 500, %Adyen.Model.RestServiceError{}}
-    ])
-  end
-
-  @doc """
-  get-accountHolders-id-balanceAccounts
-  Returns a paginated list of balance accounts associated with a specific account holder. To fetch multiple pages, use the query parameters.  For example, to limit the page to 5 balance accounts and to skip the first 10: `/accountHolders/{id}/balanceAccounts?limit=5&offset=10`.
-
-  ## Parameters
-
-  - connection (Adyen.Connection): Connection to server
-  - id (String.t): Unique identifier of the account holder.
-  - opts (KeywordList): [optional] Optional parameters
-    - :offset (integer()): The number of items that you want to skip.
-    - :limit (integer()): The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.
-  ## Returns
-
-  {:ok, Adyen.Model.PaginatedBalanceAccountsResponse.t} on success
-  {:error, Tesla.Env.t} on failure
-  """
-  @spec get_account_holders_id_balance_accounts(Tesla.Env.client, String.t, keyword()) :: {:ok, Adyen.Model.RestServiceError.t} | {:ok, Adyen.Model.PaginatedBalanceAccountsResponse.t} | {:error, Tesla.Env.t}
-  def get_account_holders_id_balance_accounts(connection, id, opts \\ []) do
-    optional_params = %{
-      :"offset" => :query,
-      :"limit" => :query
-    }
-    %{}
-    |> method(:get)
-    |> url("/accountHolders/#{id}/balanceAccounts")
-    |> add_optional_params(optional_params, opts)
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> evaluate_response([
-      { 200, %Adyen.Model.PaginatedBalanceAccountsResponse{}},
-      { 400, %Adyen.Model.RestServiceError{}},
-      { 401, %Adyen.Model.RestServiceError{}},
-      { 403, %Adyen.Model.RestServiceError{}},
-      { 422, %Adyen.Model.RestServiceError{}},
-      { 500, %Adyen.Model.RestServiceError{}}
-    ])
-  end
-
-  @doc """
-  patch-accountHolders-id
-  Updates a specific account holder. When updating an account holder resource, note that:  * If a parameter is not provided in the request, the parameter is left unchanged.  * When updating any parameter in the `contactDetails` object, you must send all other existing `contactDetails` parameters.
-
-  ## Parameters
-
-  - connection (Adyen.Connection): Connection to server
-  - id (String.t): Unique identifier of the account holder.
-  - opts (KeywordList): [optional] Optional parameters
-    - :body (AccountHolder1): 
-  ## Returns
-
-  {:ok, Adyen.Model.AccountHolder1.t} on success
-  {:error, Tesla.Env.t} on failure
-  """
-  @spec patch_account_holders_id(Tesla.Env.client, String.t, keyword()) :: {:ok, Adyen.Model.AccountHolder1.t} | {:ok, Adyen.Model.RestServiceError.t} | {:error, Tesla.Env.t}
-  def patch_account_holders_id(connection, id, opts \\ []) do
-    optional_params = %{
-      :body => :body
-    }
-    %{}
-    |> method(:patch)
-    |> url("/accountHolders/#{id}")
-    |> add_optional_params(optional_params, opts)
-    |> ensure_body()
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> evaluate_response([
-      { 200, %Adyen.Model.AccountHolder1{}},
-      { 400, %Adyen.Model.RestServiceError{}},
-      { 401, %Adyen.Model.RestServiceError{}},
-      { 403, %Adyen.Model.RestServiceError{}},
-      { 422, %Adyen.Model.RestServiceError{}},
-      { 500, %Adyen.Model.RestServiceError{}}
-    ])
-  end
-
-  @doc """
-  post-accountHolders
-  Creates an account holder. This resource represents your user's entity within the balance platform.  For more information, refer to [Create accounts](https://docs.adyen.com/issuing/create-accounts).
-
-  ## Parameters
-
-  - connection (Adyen.Connection): Connection to server
-  - opts (KeywordList): [optional] Optional parameters
-    - :body (AccountHolderInfo): 
-  ## Returns
-
-  {:ok, Adyen.Model.AccountHolder1.t} on success
-  {:error, Tesla.Env.t} on failure
-  """
-  @spec post_account_holders(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.AccountHolder1.t} | {:ok, Adyen.Model.RestServiceError.t} | {:error, Tesla.Env.t}
-  def post_account_holders(connection, opts \\ []) do
-    optional_params = %{
-      :body => :body
-    }
-    %{}
-    |> method(:post)
-    |> url("/accountHolders")
-    |> add_optional_params(optional_params, opts)
-    |> ensure_body()
-    |> Enum.into([])
-    |> (&Connection.request(connection, &1)).()
-    |> evaluate_response([
-      { 200, %Adyen.Model.AccountHolder1{}},
-      { 400, %Adyen.Model.RestServiceError{}},
-      { 401, %Adyen.Model.RestServiceError{}},
-      { 403, %Adyen.Model.RestServiceError{}},
-      { 422, %Adyen.Model.RestServiceError{}},
-      { 500, %Adyen.Model.RestServiceError{}}
-    ])
-  end
 
   @doc """
   post-closeAccountHolder
@@ -159,15 +17,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (CloseAccountHolderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.CloseAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.CloseAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_close_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.CloseAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_close_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.CloseAccountHolderResponse.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:error, Tesla.Env.t}
   def post_close_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -180,13 +38,13 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.CloseAccountHolderResponse{}},
-      { 202, %Adyen.Model.CloseAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.CloseAccountHolderResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.CloseAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -196,15 +54,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (CloseStoresRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GenericResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_close_stores(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GenericResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_close_stores(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} | {:error, Tesla.Env.t}
   def post_close_stores(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -217,12 +75,12 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GenericResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -232,15 +90,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (CreateAccountHolderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.CreateAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_create_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.CreateAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_create_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderResponse.t} | {:error, Tesla.Env.t}
   def post_create_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -253,12 +111,12 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.CreateAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -268,15 +126,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (GetAccountHolderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GetAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GetAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_get_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GetAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_get_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GetAccountHolderResponse.t} | {:error, Tesla.Env.t}
   def post_get_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -289,13 +147,13 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GetAccountHolderResponse{}},
-      { 202, %Adyen.Model.GetAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GetAccountHolderResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GetAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -305,15 +163,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (GetTaxFormRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GetTaxFormResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GetTaxFormResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_get_tax_form(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GetTaxFormResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_get_tax_form(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GetTaxFormResponse.t} | {:error, Tesla.Env.t}
   def post_get_tax_form(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -326,12 +184,12 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GetTaxFormResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GetTaxFormResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -341,15 +199,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (SuspendAccountHolderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.SuspendAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.SuspendAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_suspend_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.SuspendAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_suspend_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.SuspendAccountHolderResponse.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:error, Tesla.Env.t}
   def post_suspend_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -362,13 +220,13 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.SuspendAccountHolderResponse{}},
-      { 202, %Adyen.Model.SuspendAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.SuspendAccountHolderResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.SuspendAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -378,15 +236,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (UnSuspendAccountHolderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.UnSuspendAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.UnSuspendAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_un_suspend_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.UnSuspendAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_un_suspend_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.UnSuspendAccountHolderResponse.t} | {:error, Tesla.Env.t}
   def post_un_suspend_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -399,13 +257,13 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.UnSuspendAccountHolderResponse{}},
-      { 202, %Adyen.Model.UnSuspendAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.UnSuspendAccountHolderResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.UnSuspendAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -415,15 +273,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (UpdateAccountHolderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.UpdateAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_update_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.UpdateAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_update_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:error, Tesla.Env.t}
   def post_update_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -436,13 +294,13 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.UpdateAccountHolderResponse{}},
-      { 202, %Adyen.Model.UpdateAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -452,15 +310,15 @@ defmodule Adyen.Api.AccountHolders do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (UpdateAccountHolderStateRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GetAccountHolderStatusResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GetAccountHolderStatusResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_update_account_holder_state(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.ServiceError.t} | {:ok, Adyen.Model.GetAccountHolderStatusResponse.t} | {:error, Tesla.Env.t}
+  @spec post_update_account_holder_state(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GetAccountHolderStatusResponse.t} | {:error, Tesla.Env.t}
   def post_update_account_holder_state(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -473,13 +331,13 @@ defmodule Adyen.Api.AccountHolders do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GetAccountHolderStatusResponse{}},
-      { 202, %Adyen.Model.GetAccountHolderStatusResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GetAccountHolderStatusResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GetAccountHolderStatusResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 end

@@ -2,9 +2,9 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ShareholderType do
+defmodule AdyenForPlatforms:AccountAPI.Model.ShareholderType do
   @moduledoc """
-  Specifies how the person is associated with the account holder.  Possible values:  * **Owner**: Individuals who directly or indirectly own 25% or more of a company.  * **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.
+  Specifies how the person is associated with the account holder.   Possible values:   * **Owner**: Individuals who directly or indirectly own 25% or more of a company.  * **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.
   """
 
   @derive [Poison.Encoder]
@@ -17,7 +17,7 @@ defmodule Adyen.Model.ShareholderType do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ShareholderType do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ShareholderType do
   def decode(value, _options) do
     value
   end

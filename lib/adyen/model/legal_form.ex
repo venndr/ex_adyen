@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.LegalForm do
+defmodule AdyenForPlatforms:AccountAPI.Model.LegalForm do
   @moduledoc """
   The form of legal arrangement. Required if `type` is **Trust** or **Partnership**.  The possible values depend on the `type`.  - For `type` **Trust**:  **CashManagementTrust**, **CorporateUnitTrust**, **DeceasedEstate**, **DiscretionaryInvestmentTrust**, **DiscretionaryServicesManagementTrust**, **DiscretionaryTradingTrust**, **FirstHomeSaverAccountsTrust**, **FixedTrust**, **FixedUnitTrust**, **HybridTrust**, **ListedPublicUnitTrust**, **OtherTrust**, **PooledSuperannuationTrust**, **PublicTradingTrust**, or **UnlistedPublicUnitTrust**.  - For `type` **Partnership**: **LimitedPartnership**, **FamilyPartnership**, or **OtherPartnership**
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.LegalForm do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.LegalForm do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.LegalForm do
   def decode(value, _options) do
     value
   end

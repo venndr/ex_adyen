@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ShareholderContact do
+defmodule AdyenForPlatforms:AccountAPI.Model.ShareholderContact do
   @moduledoc """
   
   """
@@ -23,29 +23,29 @@ defmodule Adyen.Model.ShareholderContact do
   ]
 
   @type t :: %__MODULE__{
-    :"address" => Adyen.Model.ViasAddress.t | nil,
+    :"address" => AdyenForPlatforms:AccountAPI.Model.ViasAddress2.t | nil,
     :"email" => String.t | nil,
     :"fullPhoneNumber" => String.t | nil,
     :"jobTitle" => String.t | nil,
-    :"name" => Adyen.Model.ViasName.t | nil,
-    :"personalData" => Adyen.Model.ViasPersonalData.t | nil,
-    :"phoneNumber" => Adyen.Model.ViasPhoneNumber.t | nil,
+    :"name" => AdyenForPlatforms:AccountAPI.Model.ViasName1.t | nil,
+    :"personalData" => AdyenForPlatforms:AccountAPI.Model.ViasPersonalData1.t | nil,
+    :"phoneNumber" => AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber1.t | nil,
     :"shareholderCode" => String.t | nil,
     :"shareholderReference" => String.t | nil,
-    :"shareholderType" => Adyen.Model.ShareholderType.t | nil,
+    :"shareholderType" => AdyenForPlatforms:AccountAPI.Model.ShareholderType.t | nil,
     :"webAddress" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ShareholderContact do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ShareholderContact do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"address", :struct, Adyen.Model.ViasAddress, options)
-    |> deserialize(:"name", :struct, Adyen.Model.ViasName, options)
-    |> deserialize(:"personalData", :struct, Adyen.Model.ViasPersonalData, options)
-    |> deserialize(:"phoneNumber", :struct, Adyen.Model.ViasPhoneNumber, options)
-    |> deserialize(:"shareholderType", :struct, Adyen.Model.ShareholderType, options)
+    |> deserialize(:"address", :struct, AdyenForPlatforms:AccountAPI.Model.ViasAddress2, options)
+    |> deserialize(:"name", :struct, AdyenForPlatforms:AccountAPI.Model.ViasName1, options)
+    |> deserialize(:"personalData", :struct, AdyenForPlatforms:AccountAPI.Model.ViasPersonalData1, options)
+    |> deserialize(:"phoneNumber", :struct, AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber1, options)
+    |> deserialize(:"shareholderType", :struct, AdyenForPlatforms:AccountAPI.Model.ShareholderType, options)
   end
 end
 

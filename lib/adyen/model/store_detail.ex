@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.StoreDetail do
+defmodule AdyenForPlatforms:AccountAPI.Model.StoreDetail do
   @moduledoc """
   
   """
@@ -25,14 +25,14 @@ defmodule Adyen.Model.StoreDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"address" => Adyen.Model.ViasAddress.t,
+    :"address" => AdyenForPlatforms:AccountAPI.Model.ViasAddress7.t,
     :"fullPhoneNumber" => String.t | nil,
     :"merchantAccount" => String.t,
     :"merchantCategoryCode" => String.t,
-    :"phoneNumber" => Adyen.Model.ViasPhoneNumber.t | nil,
-    :"shopperInteraction" => Adyen.Model.ShopperInteraction.t | nil,
+    :"phoneNumber" => AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber3.t | nil,
+    :"shopperInteraction" => AdyenForPlatforms:AccountAPI.Model.ShopperInteraction.t | nil,
     :"splitConfigurationUUID" => String.t | nil,
-    :"status" => Adyen.Model.Status.t | nil,
+    :"status" => AdyenForPlatforms:AccountAPI.Model.Status.t | nil,
     :"store" => String.t | nil,
     :"storeName" => String.t | nil,
     :"storeReference" => String.t,
@@ -41,14 +41,14 @@ defmodule Adyen.Model.StoreDetail do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.StoreDetail do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.StoreDetail do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"address", :struct, Adyen.Model.ViasAddress, options)
-    |> deserialize(:"phoneNumber", :struct, Adyen.Model.ViasPhoneNumber, options)
-    |> deserialize(:"shopperInteraction", :struct, Adyen.Model.ShopperInteraction, options)
-    |> deserialize(:"status", :struct, Adyen.Model.Status, options)
+    |> deserialize(:"address", :struct, AdyenForPlatforms:AccountAPI.Model.ViasAddress7, options)
+    |> deserialize(:"phoneNumber", :struct, AdyenForPlatforms:AccountAPI.Model.ViasPhoneNumber3, options)
+    |> deserialize(:"shopperInteraction", :struct, AdyenForPlatforms:AccountAPI.Model.ShopperInteraction, options)
+    |> deserialize(:"status", :struct, AdyenForPlatforms:AccountAPI.Model.Status, options)
   end
 end
 

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.AccountStateType do
+defmodule AdyenForPlatforms:AccountAPI.Model.AccountStateType do
   @moduledoc """
   The state required for the account holder. > Permitted values: `Processing`, `Payout`.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.AccountStateType do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.AccountStateType do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.AccountStateType do
   def decode(value, _options) do
     value
   end

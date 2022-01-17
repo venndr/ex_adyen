@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Status do
+defmodule AdyenForPlatforms:AccountAPI.Model.Status do
   @moduledoc """
   The status of the store. Possible values: **Pending**, **Active**, **Inactive**, **InactiveWithModifications**, **Closed**.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Status do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Status do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Status do
   def decode(value, _options) do
     value
   end

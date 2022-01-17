@@ -2,9 +2,9 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Connection do
+defmodule AdyenForPlatforms:AccountAPI.Connection do
   @moduledoc """
-  Handle Tesla connections for Adyen.
+  Handle Tesla connections for AdyenForPlatforms:AccountAPI.
   """
 
   use Tesla

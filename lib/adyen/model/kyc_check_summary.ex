@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.KycCheckSummary do
+defmodule AdyenForPlatforms:AccountAPI.Model.KycCheckSummary do
   @moduledoc """
   
   """
@@ -19,7 +19,7 @@ defmodule Adyen.Model.KycCheckSummary do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.KycCheckSummary do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.KycCheckSummary do
   def decode(value, _options) do
     value
   end

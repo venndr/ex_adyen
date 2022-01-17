@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.AccountPayoutState do
+defmodule AdyenForPlatforms:AccountAPI.Model.AccountPayoutState do
   @moduledoc """
   
   """
@@ -22,16 +22,16 @@ defmodule Adyen.Model.AccountPayoutState do
     :"disableReason" => String.t | nil,
     :"disabled" => boolean() | nil,
     :"notAllowedReason" => String.t | nil,
-    :"payoutLimit" => Adyen.Model.Amount.t | nil,
+    :"payoutLimit" => AdyenForPlatforms:AccountAPI.Model.Amount4.t | nil,
     :"tierNumber" => integer() | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.AccountPayoutState do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.AccountPayoutState do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"payoutLimit", :struct, Adyen.Model.Amount, options)
+    |> deserialize(:"payoutLimit", :struct, AdyenForPlatforms:AccountAPI.Model.Amount4, options)
   end
 end
 

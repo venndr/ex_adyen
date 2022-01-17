@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.UpdateAccountResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.UpdateAccountResponse do
   @moduledoc """
   
   """
@@ -25,23 +25,23 @@ defmodule Adyen.Model.UpdateAccountResponse do
     :"accountCode" => String.t,
     :"bankAccountUUID" => String.t | nil,
     :"description" => String.t | nil,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
     :"metadata" => %{optional(String.t) => String.t} | nil,
     :"payoutMethodCode" => String.t | nil,
-    :"payoutSchedule" => Adyen.Model.PayoutScheduleResponse.t | nil,
-    :"payoutSpeed" => Adyen.Model.PayoutSpeed.t | nil,
+    :"payoutSchedule" => AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse1.t | nil,
+    :"payoutSpeed" => AdyenForPlatforms:AccountAPI.Model.PayoutSpeed.t | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.UpdateAccountResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.UpdateAccountResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
-    |> deserialize(:"payoutSchedule", :struct, Adyen.Model.PayoutScheduleResponse, options)
-    |> deserialize(:"payoutSpeed", :struct, Adyen.Model.PayoutSpeed, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
+    |> deserialize(:"payoutSchedule", :struct, AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse1, options)
+    |> deserialize(:"payoutSpeed", :struct, AdyenForPlatforms:AccountAPI.Model.PayoutSpeed, options)
   end
 end
 

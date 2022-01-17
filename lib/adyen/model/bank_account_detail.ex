@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.BankAccountDetail do
+defmodule AdyenForPlatforms:AccountAPI.Model.BankAccountDetail do
   @moduledoc """
   
   """
@@ -67,7 +67,7 @@ defmodule Adyen.Model.BankAccountDetail do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.BankAccountDetail do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.BankAccountDetail do
   def decode(value, _options) do
     value
   end

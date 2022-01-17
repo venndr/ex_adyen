@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.UploadDocumentRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.UploadDocumentRequest do
   @moduledoc """
   
   """
@@ -15,15 +15,15 @@ defmodule Adyen.Model.UploadDocumentRequest do
 
   @type t :: %__MODULE__{
     :"documentContent" => String.t,
-    :"documentDetail" => Adyen.Model.DocumentDetail.t
+    :"documentDetail" => AdyenForPlatforms:AccountAPI.Model.DocumentDetail1.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.UploadDocumentRequest do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.UploadDocumentRequest do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"documentDetail", :struct, Adyen.Model.DocumentDetail, options)
+    |> deserialize(:"documentDetail", :struct, AdyenForPlatforms:AccountAPI.Model.DocumentDetail1, options)
   end
 end
 

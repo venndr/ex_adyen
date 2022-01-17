@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.GetUploadedDocumentsRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsRequest do
   @moduledoc """
   
   """
@@ -21,7 +21,7 @@ defmodule Adyen.Model.GetUploadedDocumentsRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.GetUploadedDocumentsRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsRequest do
   def decode(value, _options) do
     value
   end

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.AccountHolderDetails do
+defmodule AdyenForPlatforms:AccountAPI.Model.AccountHolderDetails do
   @moduledoc """
   
   """
@@ -26,35 +26,35 @@ defmodule Adyen.Model.AccountHolderDetails do
   ]
 
   @type t :: %__MODULE__{
-    :"address" => Adyen.Model.ViasAddress.t | nil,
-    :"bankAccountDetails" => [Adyen.Model.BankAccountDetail.t] | nil,
+    :"address" => AdyenForPlatforms:AccountAPI.Model.ViasAddress9.t | nil,
+    :"bankAccountDetails" => [AdyenForPlatforms:AccountAPI.Model.BankAccountDetail.t] | nil,
     :"bankAggregatorDataReference" => String.t | nil,
-    :"businessDetails" => Adyen.Model.BusinessDetails.t | nil,
+    :"businessDetails" => AdyenForPlatforms:AccountAPI.Model.BusinessDetails3.t | nil,
     :"email" => String.t,
     :"fullPhoneNumber" => String.t,
-    :"individualDetails" => Adyen.Model.IndividualDetails.t | nil,
-    :"legalArrangements" => [Adyen.Model.LegalArrangementDetail.t] | nil,
+    :"individualDetails" => AdyenForPlatforms:AccountAPI.Model.IndividualDetails3.t | nil,
+    :"legalArrangements" => [AdyenForPlatforms:AccountAPI.Model.LegalArrangementDetail.t] | nil,
     :"merchantCategoryCode" => String.t | nil,
     :"metadata" => %{optional(String.t) => String.t} | nil,
-    :"payoutMethods" => [Adyen.Model.PayoutMethod.t] | nil,
-    :"principalBusinessAddress" => Adyen.Model.ViasAddress.t | nil,
-    :"storeDetails" => [Adyen.Model.StoreDetail.t] | nil,
+    :"payoutMethods" => [AdyenForPlatforms:AccountAPI.Model.PayoutMethod.t] | nil,
+    :"principalBusinessAddress" => AdyenForPlatforms:AccountAPI.Model.ViasAddress6.t | nil,
+    :"storeDetails" => [AdyenForPlatforms:AccountAPI.Model.StoreDetail.t] | nil,
     :"webAddress" => String.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.AccountHolderDetails do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.AccountHolderDetails do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"address", :struct, Adyen.Model.ViasAddress, options)
-    |> deserialize(:"bankAccountDetails", :list, Adyen.Model.BankAccountDetail, options)
-    |> deserialize(:"businessDetails", :struct, Adyen.Model.BusinessDetails, options)
-    |> deserialize(:"individualDetails", :struct, Adyen.Model.IndividualDetails, options)
-    |> deserialize(:"legalArrangements", :list, Adyen.Model.LegalArrangementDetail, options)
-    |> deserialize(:"payoutMethods", :list, Adyen.Model.PayoutMethod, options)
-    |> deserialize(:"principalBusinessAddress", :struct, Adyen.Model.ViasAddress, options)
-    |> deserialize(:"storeDetails", :list, Adyen.Model.StoreDetail, options)
+    |> deserialize(:"address", :struct, AdyenForPlatforms:AccountAPI.Model.ViasAddress9, options)
+    |> deserialize(:"bankAccountDetails", :list, AdyenForPlatforms:AccountAPI.Model.BankAccountDetail, options)
+    |> deserialize(:"businessDetails", :struct, AdyenForPlatforms:AccountAPI.Model.BusinessDetails3, options)
+    |> deserialize(:"individualDetails", :struct, AdyenForPlatforms:AccountAPI.Model.IndividualDetails3, options)
+    |> deserialize(:"legalArrangements", :list, AdyenForPlatforms:AccountAPI.Model.LegalArrangementDetail, options)
+    |> deserialize(:"payoutMethods", :list, AdyenForPlatforms:AccountAPI.Model.PayoutMethod, options)
+    |> deserialize(:"principalBusinessAddress", :struct, AdyenForPlatforms:AccountAPI.Model.ViasAddress6, options)
+    |> deserialize(:"storeDetails", :list, AdyenForPlatforms:AccountAPI.Model.StoreDetail, options)
   end
 end
 

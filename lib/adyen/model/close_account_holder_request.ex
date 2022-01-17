@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.CloseAccountHolderRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.CloseAccountHolderRequest do
   @moduledoc """
   
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.CloseAccountHolderRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.CloseAccountHolderRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.CloseAccountHolderRequest do
   def decode(value, _options) do
     value
   end

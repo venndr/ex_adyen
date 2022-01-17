@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.KycVerificationResult2 do
+defmodule AdyenForPlatforms:AccountAPI.Model.KycVerificationResult2 do
   @moduledoc """
   
   """
@@ -19,27 +19,27 @@ defmodule Adyen.Model.KycVerificationResult2 do
   ]
 
   @type t :: %__MODULE__{
-    :"accountHolder" => Adyen.Model.KycCheckResult2.t | nil,
-    :"legalArrangements" => [Adyen.Model.KycLegalArrangementCheckResult.t] | nil,
-    :"legalArrangementsEntities" => [Adyen.Model.KycLegalArrangementEntityCheckResult.t] | nil,
-    :"payoutMethods" => [Adyen.Model.KycPayoutMethodCheckResult.t] | nil,
-    :"shareholders" => [Adyen.Model.KycShareholderCheckResult.t] | nil,
-    :"signatories" => [Adyen.Model.KycSignatoryCheckResult.t] | nil,
-    :"ultimateParentCompany" => [Adyen.Model.KycUltimateParentCompanyCheckResult.t] | nil
+    :"accountHolder" => AdyenForPlatforms:AccountAPI.Model.KycCheckResult22.t | nil,
+    :"legalArrangements" => [AdyenForPlatforms:AccountAPI.Model.KycLegalArrangementCheckResult.t] | nil,
+    :"legalArrangementsEntities" => [AdyenForPlatforms:AccountAPI.Model.KycLegalArrangementEntityCheckResult.t] | nil,
+    :"payoutMethods" => [AdyenForPlatforms:AccountAPI.Model.KycPayoutMethodCheckResult.t] | nil,
+    :"shareholders" => [AdyenForPlatforms:AccountAPI.Model.KycShareholderCheckResult.t] | nil,
+    :"signatories" => [AdyenForPlatforms:AccountAPI.Model.KycSignatoryCheckResult.t] | nil,
+    :"ultimateParentCompany" => [AdyenForPlatforms:AccountAPI.Model.KycUltimateParentCompanyCheckResult.t] | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.KycVerificationResult2 do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.KycVerificationResult2 do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"accountHolder", :struct, Adyen.Model.KycCheckResult2, options)
-    |> deserialize(:"legalArrangements", :list, Adyen.Model.KycLegalArrangementCheckResult, options)
-    |> deserialize(:"legalArrangementsEntities", :list, Adyen.Model.KycLegalArrangementEntityCheckResult, options)
-    |> deserialize(:"payoutMethods", :list, Adyen.Model.KycPayoutMethodCheckResult, options)
-    |> deserialize(:"shareholders", :list, Adyen.Model.KycShareholderCheckResult, options)
-    |> deserialize(:"signatories", :list, Adyen.Model.KycSignatoryCheckResult, options)
-    |> deserialize(:"ultimateParentCompany", :list, Adyen.Model.KycUltimateParentCompanyCheckResult, options)
+    |> deserialize(:"accountHolder", :struct, AdyenForPlatforms:AccountAPI.Model.KycCheckResult22, options)
+    |> deserialize(:"legalArrangements", :list, AdyenForPlatforms:AccountAPI.Model.KycLegalArrangementCheckResult, options)
+    |> deserialize(:"legalArrangementsEntities", :list, AdyenForPlatforms:AccountAPI.Model.KycLegalArrangementEntityCheckResult, options)
+    |> deserialize(:"payoutMethods", :list, AdyenForPlatforms:AccountAPI.Model.KycPayoutMethodCheckResult, options)
+    |> deserialize(:"shareholders", :list, AdyenForPlatforms:AccountAPI.Model.KycShareholderCheckResult, options)
+    |> deserialize(:"signatories", :list, AdyenForPlatforms:AccountAPI.Model.KycSignatoryCheckResult, options)
+    |> deserialize(:"ultimateParentCompany", :list, AdyenForPlatforms:AccountAPI.Model.KycUltimateParentCompanyCheckResult, options)
   end
 end
 

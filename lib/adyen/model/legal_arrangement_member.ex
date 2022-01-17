@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.LegalArrangementMember do
+defmodule AdyenForPlatforms:AccountAPI.Model.LegalArrangementMember do
   @moduledoc """
   
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.LegalArrangementMember do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.LegalArrangementMember do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.LegalArrangementMember do
   def decode(value, _options) do
     value
   end

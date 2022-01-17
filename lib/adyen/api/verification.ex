@@ -2,13 +2,13 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Api.Verification do
+defmodule AdyenForPlatforms:AccountAPI.Api.Verification do
   @moduledoc """
   API calls for all endpoints tagged `Verification`.
   """
 
-  alias Adyen.Connection
-  import Adyen.RequestBuilder
+  alias AdyenForPlatforms:AccountAPI.Connection
+  import AdyenForPlatforms:AccountAPI.RequestBuilder
 
 
   @doc """
@@ -17,15 +17,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (PerformVerificationRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GenericResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_check_account_holder(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GenericResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_check_account_holder(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} | {:error, Tesla.Env.t}
   def post_check_account_holder(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -38,13 +38,13 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GenericResponse{}},
-      { 202, %Adyen.Model.GenericResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -54,15 +54,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (DeleteBankAccountRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GenericResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_delete_bank_accounts(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GenericResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_delete_bank_accounts(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} | {:error, Tesla.Env.t}
   def post_delete_bank_accounts(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -75,13 +75,13 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GenericResponse{}},
-      { 202, %Adyen.Model.GenericResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -91,15 +91,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (DeletePayoutMethodRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GenericResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_delete_payout_methods(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GenericResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_delete_payout_methods(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} | {:error, Tesla.Env.t}
   def post_delete_payout_methods(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -112,13 +112,13 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GenericResponse{}},
-      { 202, %Adyen.Model.GenericResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -128,15 +128,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (DeleteShareholderRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GenericResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_delete_shareholders(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GenericResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_delete_shareholders(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} | {:error, Tesla.Env.t}
   def post_delete_shareholders(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -149,13 +149,13 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GenericResponse{}},
-      { 202, %Adyen.Model.GenericResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -165,15 +165,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (DeleteSignatoriesRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GenericResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_delete_signatories(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.GenericResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_delete_signatories(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GenericResponse.t} | {:error, Tesla.Env.t}
   def post_delete_signatories(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -186,13 +186,13 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GenericResponse{}},
-      { 202, %Adyen.Model.GenericResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.GenericResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -202,15 +202,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (GetUploadedDocumentsRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.GetUploadedDocumentsResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_get_uploaded_documents(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.ServiceError.t} | {:ok, Adyen.Model.GetUploadedDocumentsResponse.t} | {:error, Tesla.Env.t}
+  @spec post_get_uploaded_documents(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsResponse.t} | {:error, Tesla.Env.t}
   def post_get_uploaded_documents(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -223,12 +223,12 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.GetUploadedDocumentsResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -238,15 +238,15 @@ defmodule Adyen.Api.Verification do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (UploadDocumentRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.UpdateAccountHolderResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_upload_document(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.UpdateAccountHolderResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_upload_document(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:error, Tesla.Env.t}
   def post_upload_document(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -259,13 +259,13 @@ defmodule Adyen.Api.Verification do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.UpdateAccountHolderResponse{}},
-      { 202, %Adyen.Model.UpdateAccountHolderResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.UpdateAccountHolderResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 end

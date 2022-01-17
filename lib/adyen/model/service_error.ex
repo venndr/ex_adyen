@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ServiceError do
+defmodule AdyenForPlatforms:AccountAPI.Model.ServiceError do
   @moduledoc """
   
   """
@@ -25,7 +25,7 @@ defmodule Adyen.Model.ServiceError do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ServiceError do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ServiceError do
   def decode(value, _options) do
     value
   end

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.PayoutSpeed do
+defmodule AdyenForPlatforms:AccountAPI.Model.PayoutSpeed do
   @moduledoc """
   Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.PayoutSpeed do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.PayoutSpeed do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.PayoutSpeed do
   def decode(value, _options) do
     value
   end

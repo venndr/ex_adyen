@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.DeletePayoutMethodRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.DeletePayoutMethodRequest do
   @moduledoc """
   
   """
@@ -19,7 +19,7 @@ defmodule Adyen.Model.DeletePayoutMethodRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.DeletePayoutMethodRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.DeletePayoutMethodRequest do
   def decode(value, _options) do
     value
   end

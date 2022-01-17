@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.PayoutScheduleResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse do
   @moduledoc """
   
   """
@@ -14,16 +14,16 @@ defmodule Adyen.Model.PayoutScheduleResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"nextScheduledPayout" => DateTime.t | nil,
-    :"schedule" => Adyen.Model.Schedule.t
+    :"nextScheduledPayout" => String.t | nil,
+    :"schedule" => AdyenForPlatforms:AccountAPI.Model.Schedule.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.PayoutScheduleResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"schedule", :struct, Adyen.Model.Schedule, options)
+    |> deserialize(:"schedule", :struct, AdyenForPlatforms:AccountAPI.Model.Schedule, options)
   end
 end
 

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.RequestBuilder do
+defmodule AdyenForPlatforms:AccountAPI.RequestBuilder do
   @moduledoc """
   Helper functions for building Tesla requests
   """

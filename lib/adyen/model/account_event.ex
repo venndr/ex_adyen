@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.AccountEvent do
+defmodule AdyenForPlatforms:AccountAPI.Model.AccountEvent do
   @moduledoc """
   
   """
@@ -15,17 +15,17 @@ defmodule Adyen.Model.AccountEvent do
   ]
 
   @type t :: %__MODULE__{
-    :"event" => Adyen.Model.Event.t,
-    :"executionDate" => DateTime.t,
+    :"event" => AdyenForPlatforms:AccountAPI.Model.Event.t,
+    :"executionDate" => String.t,
     :"reason" => String.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.AccountEvent do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.AccountEvent do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"event", :struct, Adyen.Model.Event, options)
+    |> deserialize(:"event", :struct, AdyenForPlatforms:AccountAPI.Model.Event, options)
   end
 end
 

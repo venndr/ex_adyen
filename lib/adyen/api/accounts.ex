@@ -2,13 +2,13 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Api.Accounts do
+defmodule AdyenForPlatforms:AccountAPI.Api.Accounts do
   @moduledoc """
   API calls for all endpoints tagged `Accounts`.
   """
 
-  alias Adyen.Connection
-  import Adyen.RequestBuilder
+  alias AdyenForPlatforms:AccountAPI.Connection
+  import AdyenForPlatforms:AccountAPI.RequestBuilder
 
 
   @doc """
@@ -17,15 +17,15 @@ defmodule Adyen.Api.Accounts do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (CloseAccountRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.CloseAccountResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.CloseAccountResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_close_account(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.CloseAccountResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_close_account(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.CloseAccountResponse.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:error, Tesla.Env.t}
   def post_close_account(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -38,13 +38,13 @@ defmodule Adyen.Api.Accounts do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.CloseAccountResponse{}},
-      { 202, %Adyen.Model.CloseAccountResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.CloseAccountResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.CloseAccountResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -54,15 +54,15 @@ defmodule Adyen.Api.Accounts do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (CreateAccountRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.CreateAccountResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.CreateAccountResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_create_account(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.ServiceError.t} | {:ok, Adyen.Model.CreateAccountResponse.t} | {:error, Tesla.Env.t}
+  @spec post_create_account(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.CreateAccountResponse.t} | {:error, Tesla.Env.t}
   def post_create_account(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -75,13 +75,13 @@ defmodule Adyen.Api.Accounts do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.CreateAccountResponse{}},
-      { 202, %Adyen.Model.CreateAccountResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.CreateAccountResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.CreateAccountResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 
@@ -91,15 +91,15 @@ defmodule Adyen.Api.Accounts do
 
   ## Parameters
 
-  - connection (Adyen.Connection): Connection to server
+  - connection (AdyenForPlatforms:AccountAPI.Connection): Connection to server
   - opts (KeywordList): [optional] Optional parameters
     - :body (UpdateAccountRequest): 
   ## Returns
 
-  {:ok, Adyen.Model.UpdateAccountResponse.t} on success
+  {:ok, AdyenForPlatforms:AccountAPI.Model.UpdateAccountResponse.t} on success
   {:error, Tesla.Env.t} on failure
   """
-  @spec post_update_account(Tesla.Env.client, keyword()) :: {:ok, Adyen.Model.UpdateAccountResponse.t} | {:ok, Adyen.Model.ServiceError.t} | {:error, Tesla.Env.t}
+  @spec post_update_account(Tesla.Env.client, keyword()) :: {:ok, AdyenForPlatforms:AccountAPI.Model.ServiceError.t} | {:ok, AdyenForPlatforms:AccountAPI.Model.UpdateAccountResponse.t} | {:error, Tesla.Env.t}
   def post_update_account(connection, opts \\ []) do
     optional_params = %{
       :body => :body
@@ -112,13 +112,13 @@ defmodule Adyen.Api.Accounts do
     |> Enum.into([])
     |> (&Connection.request(connection, &1)).()
     |> evaluate_response([
-      { 200, %Adyen.Model.UpdateAccountResponse{}},
-      { 202, %Adyen.Model.UpdateAccountResponse{}},
-      { 400, %Adyen.Model.ServiceError{}},
-      { 401, %Adyen.Model.ServiceError{}},
-      { 403, %Adyen.Model.ServiceError{}},
-      { 422, %Adyen.Model.ServiceError{}},
-      { 500, %Adyen.Model.ServiceError{}}
+      { 200, %AdyenForPlatforms:AccountAPI.Model.UpdateAccountResponse{}},
+      { 202, %AdyenForPlatforms:AccountAPI.Model.UpdateAccountResponse{}},
+      { 400, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 401, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 403, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 422, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}},
+      { 500, %AdyenForPlatforms:AccountAPI.Model.ServiceError{}}
     ])
   end
 end

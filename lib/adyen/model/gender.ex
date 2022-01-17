@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Gender do
+defmodule AdyenForPlatforms:AccountAPI.Model.Gender do
   @moduledoc """
   The gender. >The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Gender do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Gender do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Gender do
   def decode(value, _options) do
     value
   end

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.KycCheckStatusData do
+defmodule AdyenForPlatforms:AccountAPI.Model.KycCheckStatusData do
   @moduledoc """
   
   """
@@ -17,19 +17,19 @@ defmodule Adyen.Model.KycCheckStatusData do
 
   @type t :: %__MODULE__{
     :"requiredFields" => [String.t] | nil,
-    :"status" => Adyen.Model.Status3.t,
-    :"summary" => Adyen.Model.KycCheckSummary.t | nil,
-    :"type" => Adyen.Model.Type2.t
+    :"status" => AdyenForPlatforms:AccountAPI.Model.Status3.t,
+    :"summary" => AdyenForPlatforms:AccountAPI.Model.KycCheckSummary2.t | nil,
+    :"type" => AdyenForPlatforms:AccountAPI.Model.Type2.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.KycCheckStatusData do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.KycCheckStatusData do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"status", :struct, Adyen.Model.Status3, options)
-    |> deserialize(:"summary", :struct, Adyen.Model.KycCheckSummary, options)
-    |> deserialize(:"type", :struct, Adyen.Model.Type2, options)
+    |> deserialize(:"status", :struct, AdyenForPlatforms:AccountAPI.Model.Status3, options)
+    |> deserialize(:"summary", :struct, AdyenForPlatforms:AccountAPI.Model.KycCheckSummary2, options)
+    |> deserialize(:"type", :struct, AdyenForPlatforms:AccountAPI.Model.Type2, options)
   end
 end
 

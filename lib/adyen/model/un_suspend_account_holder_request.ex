@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.UnSuspendAccountHolderRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.UnSuspendAccountHolderRequest do
   @moduledoc """
   
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.UnSuspendAccountHolderRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.UnSuspendAccountHolderRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.UnSuspendAccountHolderRequest do
   def decode(value, _options) do
     value
   end

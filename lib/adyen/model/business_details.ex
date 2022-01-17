@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.BusinessDetails do
+defmodule AdyenForPlatforms:AccountAPI.Model.BusinessDetails do
   @moduledoc """
   
   """
@@ -24,10 +24,10 @@ defmodule Adyen.Model.BusinessDetails do
   @type t :: %__MODULE__{
     :"doingBusinessAs" => String.t | nil,
     :"legalBusinessName" => String.t | nil,
-    :"listedUltimateParentCompany" => [Adyen.Model.UltimateParentCompany.t] | nil,
+    :"listedUltimateParentCompany" => [AdyenForPlatforms:AccountAPI.Model.UltimateParentCompany.t] | nil,
     :"registrationNumber" => String.t | nil,
-    :"shareholders" => [Adyen.Model.ShareholderContact.t] | nil,
-    :"signatories" => [Adyen.Model.SignatoryContact.t] | nil,
+    :"shareholders" => [AdyenForPlatforms:AccountAPI.Model.ShareholderContact.t] | nil,
+    :"signatories" => [AdyenForPlatforms:AccountAPI.Model.SignatoryContact.t] | nil,
     :"stockExchange" => String.t | nil,
     :"stockNumber" => String.t | nil,
     :"stockTicker" => String.t | nil,
@@ -35,13 +35,13 @@ defmodule Adyen.Model.BusinessDetails do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.BusinessDetails do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.BusinessDetails do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"listedUltimateParentCompany", :list, Adyen.Model.UltimateParentCompany, options)
-    |> deserialize(:"shareholders", :list, Adyen.Model.ShareholderContact, options)
-    |> deserialize(:"signatories", :list, Adyen.Model.SignatoryContact, options)
+    |> deserialize(:"listedUltimateParentCompany", :list, AdyenForPlatforms:AccountAPI.Model.UltimateParentCompany, options)
+    |> deserialize(:"shareholders", :list, AdyenForPlatforms:AccountAPI.Model.ShareholderContact, options)
+    |> deserialize(:"signatories", :list, AdyenForPlatforms:AccountAPI.Model.SignatoryContact, options)
   end
 end
 

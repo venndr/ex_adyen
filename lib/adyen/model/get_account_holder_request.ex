@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.GetAccountHolderRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.GetAccountHolderRequest do
   @moduledoc """
   
   """
@@ -21,7 +21,7 @@ defmodule Adyen.Model.GetAccountHolderRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.GetAccountHolderRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.GetAccountHolderRequest do
   def decode(value, _options) do
     value
   end

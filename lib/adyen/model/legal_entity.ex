@@ -2,43 +2,24 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.LegalEntity do
+defmodule AdyenForPlatforms:AccountAPI.Model.LegalEntity do
   @moduledoc """
-  
+  The legal entity type of the account holder. This determines the information that should be provided in the request.  Possible values: **Business**, **Individual**, or **NonProfit**.  * If set to **Business** or **NonProfit**, then `accountHolderDetails.businessDetails` must be provided, with at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.  * If set to **Individual**, then `accountHolderDetails.individualDetails` must be provided.
   """
 
   @derive [Poison.Encoder]
   defstruct [
-    :"documents",
-    :"entityAssociations",
-    :"id",
-    :"individual",
-    :"organization",
-    :"transferInstruments",
-    :"type"
+    
   ]
 
   @type t :: %__MODULE__{
-    :"documents" => [Adyen.Model.EntityReference.t] | nil,
-    :"entityAssociations" => [Adyen.Model.LegalEntityAssociation.t] | nil,
-    :"id" => String.t | nil,
-    :"individual" => Adyen.Model.Individual.t | nil,
-    :"organization" => Adyen.Model.Organization.t | nil,
-    :"transferInstruments" => [Adyen.Model.EntityReference.t] | nil,
-    :"type" => Adyen.Model.Type18.t | nil
+    
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.LegalEntity do
-  import Adyen.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.LegalEntity do
+  def decode(value, _options) do
     value
-    |> deserialize(:"documents", :list, Adyen.Model.EntityReference, options)
-    |> deserialize(:"entityAssociations", :list, Adyen.Model.LegalEntityAssociation, options)
-    |> deserialize(:"individual", :struct, Adyen.Model.Individual, options)
-    |> deserialize(:"organization", :struct, Adyen.Model.Organization, options)
-    |> deserialize(:"transferInstruments", :list, Adyen.Model.EntityReference, options)
-    |> deserialize(:"type", :struct, Adyen.Model.Type18, options)
   end
 end
 

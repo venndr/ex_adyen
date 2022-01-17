@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Type2 do
+defmodule AdyenForPlatforms:AccountAPI.Model.Type2 do
   @moduledoc """
   The type of check.  Possible values:   * **BANK_ACCOUNT_VERIFICATION**: Used in v5 and earlier. Replaced by **PAYOUT_METHOD_VERIFICATION** in v6 and later.   * **COMPANY_VERIFICATION**    * **CARD_VERIFICATION**  * **IDENTITY_VERIFICATION**  * **LEGAL_ARRANGEMENT_VERIFICATION**  * **NONPROFIT_VERIFICATION**   * **PASSPORT_VERIFICATION**  * **PAYOUT_METHOD_VERIFICATION**: Used in v6 and later.  * **PCI_VERIFICATION**
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Type2 do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Type2 do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Type2 do
   def decode(value, _options) do
     value
   end

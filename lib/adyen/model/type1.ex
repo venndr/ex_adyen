@@ -2,9 +2,9 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Type1 do
+defmodule AdyenForPlatforms:AccountAPI.Model.Type1 do
   @moduledoc """
-  The [type of legal arrangement](https://docs.adyen.com/platforms/verification-checks/legal-arrangements#types-of-legal-arrangements).  Possible values:  - **Association**  - **Partnership**  - **SoleProprietorship**  - **Trust**
+  The [type of legal arrangement](https://docs.adyen.com/platforms/verification-checks/legal-arrangements#types-of-legal-arrangements).  Possible values:  - **Association**   - **Partnership**   - **SoleProprietorship**   - **Trust**
   """
 
   @derive [Poison.Encoder]
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Type1 do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Type1 do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Type1 do
   def decode(value, _options) do
     value
   end

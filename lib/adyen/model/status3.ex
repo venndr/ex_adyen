@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Status3 do
+defmodule AdyenForPlatforms:AccountAPI.Model.Status3 do
   @moduledoc """
   The status of the check.  Possible values: **AWAITING_DATA** , **DATA_PROVIDED**, **FAILED**, **INVALID_DATA**, **PASSED**, **PENDING**, **RETRY_LIMIT_REACHED**.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Status3 do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Status3 do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Status3 do
   def decode(value, _options) do
     value
   end

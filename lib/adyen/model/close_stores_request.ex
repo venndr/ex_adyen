@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.CloseStoresRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.CloseStoresRequest do
   @moduledoc """
   
   """
@@ -19,7 +19,7 @@ defmodule Adyen.Model.CloseStoresRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.CloseStoresRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.CloseStoresRequest do
   def decode(value, _options) do
     value
   end

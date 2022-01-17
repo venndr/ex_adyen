@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.DocumentDetail do
+defmodule AdyenForPlatforms:AccountAPI.Model.DocumentDetail do
   @moduledoc """
   
   """
@@ -24,7 +24,7 @@ defmodule Adyen.Model.DocumentDetail do
     :"accountHolderCode" => String.t,
     :"bankAccountUUID" => String.t | nil,
     :"description" => String.t | nil,
-    :"documentType" => Adyen.Model.DocumentType.t,
+    :"documentType" => AdyenForPlatforms:AccountAPI.Model.DocumentType.t,
     :"filename" => String.t,
     :"legalArrangementCode" => String.t | nil,
     :"legalArrangementEntityCode" => String.t | nil,
@@ -33,11 +33,11 @@ defmodule Adyen.Model.DocumentDetail do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.DocumentDetail do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.DocumentDetail do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"documentType", :struct, Adyen.Model.DocumentType, options)
+    |> deserialize(:"documentType", :struct, AdyenForPlatforms:AccountAPI.Model.DocumentType, options)
   end
 end
 

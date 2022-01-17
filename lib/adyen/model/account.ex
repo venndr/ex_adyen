@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Account do
+defmodule AdyenForPlatforms:AccountAPI.Model.Account do
   @moduledoc """
   
   """
@@ -29,18 +29,18 @@ defmodule Adyen.Model.Account do
     :"description" => String.t | nil,
     :"metadata" => %{optional(String.t) => String.t} | nil,
     :"payoutMethodCode" => String.t | nil,
-    :"payoutSchedule" => Adyen.Model.PayoutScheduleResponse.t | nil,
-    :"payoutSpeed" => Adyen.Model.PayoutSpeed.t | nil,
+    :"payoutSchedule" => AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse4.t | nil,
+    :"payoutSpeed" => AdyenForPlatforms:AccountAPI.Model.PayoutSpeed.t | nil,
     :"status" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Account do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Account do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"payoutSchedule", :struct, Adyen.Model.PayoutScheduleResponse, options)
-    |> deserialize(:"payoutSpeed", :struct, Adyen.Model.PayoutSpeed, options)
+    |> deserialize(:"payoutSchedule", :struct, AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse4, options)
+    |> deserialize(:"payoutSpeed", :struct, AdyenForPlatforms:AccountAPI.Model.PayoutSpeed, options)
   end
 end
 

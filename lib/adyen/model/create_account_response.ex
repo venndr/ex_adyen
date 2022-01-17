@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.CreateAccountResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.CreateAccountResponse do
   @moduledoc """
   
   """
@@ -28,25 +28,25 @@ defmodule Adyen.Model.CreateAccountResponse do
     :"accountHolderCode" => String.t,
     :"bankAccountUUID" => String.t | nil,
     :"description" => String.t | nil,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
     :"metadata" => %{optional(String.t) => String.t} | nil,
     :"payoutMethodCode" => String.t | nil,
-    :"payoutSchedule" => Adyen.Model.PayoutScheduleResponse.t | nil,
-    :"payoutSpeed" => Adyen.Model.PayoutSpeed.t | nil,
+    :"payoutSchedule" => AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse1.t | nil,
+    :"payoutSpeed" => AdyenForPlatforms:AccountAPI.Model.PayoutSpeed.t | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil,
-    :"status" => Adyen.Model.Status4.t
+    :"status" => AdyenForPlatforms:AccountAPI.Model.Status4.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.CreateAccountResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.CreateAccountResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
-    |> deserialize(:"payoutSchedule", :struct, Adyen.Model.PayoutScheduleResponse, options)
-    |> deserialize(:"payoutSpeed", :struct, Adyen.Model.PayoutSpeed, options)
-    |> deserialize(:"status", :struct, Adyen.Model.Status4, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
+    |> deserialize(:"payoutSchedule", :struct, AdyenForPlatforms:AccountAPI.Model.PayoutScheduleResponse1, options)
+    |> deserialize(:"payoutSpeed", :struct, AdyenForPlatforms:AccountAPI.Model.PayoutSpeed, options)
+    |> deserialize(:"status", :struct, AdyenForPlatforms:AccountAPI.Model.Status4, options)
   end
 end
 

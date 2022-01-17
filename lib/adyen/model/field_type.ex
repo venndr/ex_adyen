@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.FieldType do
+defmodule AdyenForPlatforms:AccountAPI.Model.FieldType do
   @moduledoc """
   
   """
@@ -16,16 +16,16 @@ defmodule Adyen.Model.FieldType do
 
   @type t :: %__MODULE__{
     :"field" => String.t | nil,
-    :"fieldName" => Adyen.Model.FieldName.t | nil,
+    :"fieldName" => AdyenForPlatforms:AccountAPI.Model.FieldName.t | nil,
     :"shareholderCode" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.FieldType do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.FieldType do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"fieldName", :struct, Adyen.Model.FieldName, options)
+    |> deserialize(:"fieldName", :struct, AdyenForPlatforms:AccountAPI.Model.FieldName, options)
   end
 end
 

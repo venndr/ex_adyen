@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.LegalArrangementDetail do
+defmodule AdyenForPlatforms:AccountAPI.Model.LegalArrangementDetail do
   @moduledoc """
   
   """
@@ -21,26 +21,26 @@ defmodule Adyen.Model.LegalArrangementDetail do
   ]
 
   @type t :: %__MODULE__{
-    :"address" => Adyen.Model.ViasAddress.t,
+    :"address" => AdyenForPlatforms:AccountAPI.Model.ViasAddress4.t,
     :"legalArrangementCode" => String.t | nil,
-    :"legalArrangementEntities" => [Adyen.Model.LegalArrangementEntityDetail.t] | nil,
+    :"legalArrangementEntities" => [AdyenForPlatforms:AccountAPI.Model.LegalArrangementEntityDetail.t] | nil,
     :"legalArrangementReference" => String.t | nil,
-    :"legalForm" => Adyen.Model.LegalForm.t | nil,
+    :"legalForm" => AdyenForPlatforms:AccountAPI.Model.LegalForm.t | nil,
     :"name" => String.t,
     :"registrationNumber" => String.t | nil,
     :"taxNumber" => String.t | nil,
-    :"type" => Adyen.Model.Type1.t
+    :"type" => AdyenForPlatforms:AccountAPI.Model.Type1.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.LegalArrangementDetail do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.LegalArrangementDetail do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"address", :struct, Adyen.Model.ViasAddress, options)
-    |> deserialize(:"legalArrangementEntities", :list, Adyen.Model.LegalArrangementEntityDetail, options)
-    |> deserialize(:"legalForm", :struct, Adyen.Model.LegalForm, options)
-    |> deserialize(:"type", :struct, Adyen.Model.Type1, options)
+    |> deserialize(:"address", :struct, AdyenForPlatforms:AccountAPI.Model.ViasAddress4, options)
+    |> deserialize(:"legalArrangementEntities", :list, AdyenForPlatforms:AccountAPI.Model.LegalArrangementEntityDetail, options)
+    |> deserialize(:"legalForm", :struct, AdyenForPlatforms:AccountAPI.Model.LegalForm, options)
+    |> deserialize(:"type", :struct, AdyenForPlatforms:AccountAPI.Model.Type1, options)
   end
 end
 

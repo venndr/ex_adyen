@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.GetAccountHolderStatusResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.GetAccountHolderStatusResponse do
   @moduledoc """
   
   """
@@ -18,19 +18,19 @@ defmodule Adyen.Model.GetAccountHolderStatusResponse do
 
   @type t :: %__MODULE__{
     :"accountHolderCode" => String.t,
-    :"accountHolderStatus" => Adyen.Model.AccountHolderStatus.t,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
+    :"accountHolderStatus" => AdyenForPlatforms:AccountAPI.Model.AccountHolderStatus4.t,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.GetAccountHolderStatusResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.GetAccountHolderStatusResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"accountHolderStatus", :struct, Adyen.Model.AccountHolderStatus, options)
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
+    |> deserialize(:"accountHolderStatus", :struct, AdyenForPlatforms:AccountAPI.Model.AccountHolderStatus4, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
   end
 end
 

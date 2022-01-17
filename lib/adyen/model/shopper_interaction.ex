@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ShopperInteraction do
+defmodule AdyenForPlatforms:AccountAPI.Model.ShopperInteraction do
   @moduledoc """
   The sales channel. Possible values: **Ecommerce**, **POS**.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.ShopperInteraction do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ShopperInteraction do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ShopperInteraction do
   def decode(value, _options) do
     value
   end

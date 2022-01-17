@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ErrorFieldType do
+defmodule AdyenForPlatforms:AccountAPI.Model.ErrorFieldType do
   @moduledoc """
   
   """
@@ -17,15 +17,15 @@ defmodule Adyen.Model.ErrorFieldType do
   @type t :: %__MODULE__{
     :"errorCode" => integer() | nil,
     :"errorDescription" => String.t | nil,
-    :"fieldType" => Adyen.Model.FieldType.t | nil
+    :"fieldType" => AdyenForPlatforms:AccountAPI.Model.FieldType2.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ErrorFieldType do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ErrorFieldType do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"fieldType", :struct, Adyen.Model.FieldType, options)
+    |> deserialize(:"fieldType", :struct, AdyenForPlatforms:AccountAPI.Model.FieldType2, options)
   end
 end
 

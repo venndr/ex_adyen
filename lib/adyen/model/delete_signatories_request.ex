@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.DeleteSignatoriesRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.DeleteSignatoriesRequest do
   @moduledoc """
   
   """
@@ -19,7 +19,7 @@ defmodule Adyen.Model.DeleteSignatoriesRequest do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.DeleteSignatoriesRequest do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.DeleteSignatoriesRequest do
   def decode(value, _options) do
     value
   end

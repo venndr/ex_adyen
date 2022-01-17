@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.GetUploadedDocumentsResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsResponse do
   @moduledoc """
   
   """
@@ -16,19 +16,19 @@ defmodule Adyen.Model.GetUploadedDocumentsResponse do
   ]
 
   @type t :: %__MODULE__{
-    :"documentDetails" => [Adyen.Model.DocumentDetail.t] | nil,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
+    :"documentDetails" => [AdyenForPlatforms:AccountAPI.Model.DocumentDetail.t] | nil,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.GetUploadedDocumentsResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.GetUploadedDocumentsResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"documentDetails", :list, Adyen.Model.DocumentDetail, options)
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
+    |> deserialize(:"documentDetails", :list, AdyenForPlatforms:AccountAPI.Model.DocumentDetail, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
   end
 end
 

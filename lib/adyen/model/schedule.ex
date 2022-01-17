@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Schedule do
+defmodule AdyenForPlatforms:AccountAPI.Model.Schedule do
   @moduledoc """
   The payout schedule of the account. >Permitted values: `DEFAULT`, `HOLD`, `DAILY`, `WEEKLY`, `MONTHLY`.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Schedule do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Schedule do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Schedule do
   def decode(value, _options) do
     value
   end

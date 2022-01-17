@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.AccountProcessingState do
+defmodule AdyenForPlatforms:AccountAPI.Model.AccountProcessingState do
   @moduledoc """
   
   """
@@ -19,18 +19,18 @@ defmodule Adyen.Model.AccountProcessingState do
   @type t :: %__MODULE__{
     :"disableReason" => String.t | nil,
     :"disabled" => boolean() | nil,
-    :"processedFrom" => Adyen.Model.Amount.t | nil,
-    :"processedTo" => Adyen.Model.Amount.t | nil,
+    :"processedFrom" => AdyenForPlatforms:AccountAPI.Model.Amount1.t | nil,
+    :"processedTo" => AdyenForPlatforms:AccountAPI.Model.Amount2.t | nil,
     :"tierNumber" => integer() | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.AccountProcessingState do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.AccountProcessingState do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"processedFrom", :struct, Adyen.Model.Amount, options)
-    |> deserialize(:"processedTo", :struct, Adyen.Model.Amount, options)
+    |> deserialize(:"processedFrom", :struct, AdyenForPlatforms:AccountAPI.Model.Amount1, options)
+    |> deserialize(:"processedTo", :struct, AdyenForPlatforms:AccountAPI.Model.Amount2, options)
   end
 end
 

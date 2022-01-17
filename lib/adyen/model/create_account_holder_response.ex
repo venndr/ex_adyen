@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.CreateAccountHolderResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderResponse do
   @moduledoc """
   
   """
@@ -26,28 +26,28 @@ defmodule Adyen.Model.CreateAccountHolderResponse do
   @type t :: %__MODULE__{
     :"accountCode" => String.t | nil,
     :"accountHolderCode" => String.t,
-    :"accountHolderDetails" => Adyen.Model.AccountHolderDetails.t,
-    :"accountHolderStatus" => Adyen.Model.AccountHolderStatus.t,
+    :"accountHolderDetails" => AdyenForPlatforms:AccountAPI.Model.AccountHolderDetails2.t,
+    :"accountHolderStatus" => AdyenForPlatforms:AccountAPI.Model.AccountHolderStatus2.t,
     :"description" => String.t | nil,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
-    :"legalEntity" => Adyen.Model.LegalEntity1.t,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
+    :"legalEntity" => AdyenForPlatforms:AccountAPI.Model.LegalEntity1.t,
     :"primaryCurrency" => String.t | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil,
-    :"verification" => Adyen.Model.KycVerificationResult2.t,
+    :"verification" => AdyenForPlatforms:AccountAPI.Model.KycVerificationResult21.t,
     :"verificationProfile" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.CreateAccountHolderResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.CreateAccountHolderResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"accountHolderDetails", :struct, Adyen.Model.AccountHolderDetails, options)
-    |> deserialize(:"accountHolderStatus", :struct, Adyen.Model.AccountHolderStatus, options)
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
-    |> deserialize(:"legalEntity", :struct, Adyen.Model.LegalEntity1, options)
-    |> deserialize(:"verification", :struct, Adyen.Model.KycVerificationResult2, options)
+    |> deserialize(:"accountHolderDetails", :struct, AdyenForPlatforms:AccountAPI.Model.AccountHolderDetails2, options)
+    |> deserialize(:"accountHolderStatus", :struct, AdyenForPlatforms:AccountAPI.Model.AccountHolderStatus2, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
+    |> deserialize(:"legalEntity", :struct, AdyenForPlatforms:AccountAPI.Model.LegalEntity1, options)
+    |> deserialize(:"verification", :struct, AdyenForPlatforms:AccountAPI.Model.KycVerificationResult21, options)
   end
 end
 

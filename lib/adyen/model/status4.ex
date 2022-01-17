@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Status4 do
+defmodule AdyenForPlatforms:AccountAPI.Model.Status4 do
   @moduledoc """
   The status of the account. >Permitted values: `Active`.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Status4 do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Status4 do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Status4 do
   def decode(value, _options) do
     value
   end

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.PayoutMethod do
+defmodule AdyenForPlatforms:AccountAPI.Model.PayoutMethod do
   @moduledoc """
   
   """
@@ -11,7 +11,7 @@ defmodule Adyen.Model.PayoutMethod do
   defstruct [
     :"merchantAccount",
     :"payoutMethodCode",
-    :"payoutMethodType",
+    :"payoutMethodReference",
     :"recurringDetailReference",
     :"shopperReference"
   ]
@@ -19,17 +19,15 @@ defmodule Adyen.Model.PayoutMethod do
   @type t :: %__MODULE__{
     :"merchantAccount" => String.t,
     :"payoutMethodCode" => String.t | nil,
-    :"payoutMethodType" => Adyen.Model.PayoutMethodType.t | nil,
+    :"payoutMethodReference" => String.t | nil,
     :"recurringDetailReference" => String.t,
     :"shopperReference" => String.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.PayoutMethod do
-  import Adyen.Deserializer
-  def decode(value, options) do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.PayoutMethod do
+  def decode(value, _options) do
     value
-    |> deserialize(:"payoutMethodType", :struct, Adyen.Model.PayoutMethodType, options)
   end
 end
 

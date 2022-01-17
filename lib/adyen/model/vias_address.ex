@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.ViasAddress do
+defmodule AdyenForPlatforms:AccountAPI.Model.ViasAddress do
   @moduledoc """
   
   """
@@ -27,7 +27,7 @@ defmodule Adyen.Model.ViasAddress do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.ViasAddress do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.ViasAddress do
   def decode(value, _options) do
     value
   end

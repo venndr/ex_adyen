@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.PerformVerificationRequest do
+defmodule AdyenForPlatforms:AccountAPI.Model.PerformVerificationRequest do
   @moduledoc """
   
   """
@@ -16,16 +16,16 @@ defmodule Adyen.Model.PerformVerificationRequest do
 
   @type t :: %__MODULE__{
     :"accountHolderCode" => String.t,
-    :"accountStateType" => Adyen.Model.AccountStateType.t,
+    :"accountStateType" => AdyenForPlatforms:AccountAPI.Model.AccountStateType.t,
     :"tier" => integer()
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.PerformVerificationRequest do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.PerformVerificationRequest do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"accountStateType", :struct, Adyen.Model.AccountStateType, options)
+    |> deserialize(:"accountStateType", :struct, AdyenForPlatforms:AccountAPI.Model.AccountStateType, options)
   end
 end
 

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.GetTaxFormResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.GetTaxFormResponse do
   @moduledoc """
   
   """
@@ -19,17 +19,17 @@ defmodule Adyen.Model.GetTaxFormResponse do
   @type t :: %__MODULE__{
     :"content" => String.t | nil,
     :"contentType" => String.t | nil,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.GetTaxFormResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.GetTaxFormResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
   end
 end
 

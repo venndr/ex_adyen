@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.PhoneType do
+defmodule AdyenForPlatforms:AccountAPI.Model.PhoneType do
   @moduledoc """
   The type of the phone number. >The following values are permitted: `Landline`, `Mobile`, `SIP`, `Fax`.
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.PhoneType do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.PhoneType do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.PhoneType do
   def decode(value, _options) do
     value
   end

@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.Event do
+defmodule AdyenForPlatforms:AccountAPI.Model.Event do
   @moduledoc """
   The event. >Permitted values: `InactivateAccount`, `RefundNotPaidOutTransfers`. For more information, refer to [Verification checks](https://docs.adyen.com/platforms/verification-checks).
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Model.Event do
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.Event do
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.Event do
   def decode(value, _options) do
     value
   end

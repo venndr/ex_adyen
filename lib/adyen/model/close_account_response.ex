@@ -2,7 +2,7 @@
 # https://openapi-generator.tech
 # Do not edit the class manually.
 
-defmodule Adyen.Model.CloseAccountResponse do
+defmodule AdyenForPlatforms:AccountAPI.Model.CloseAccountResponse do
   @moduledoc """
   
   """
@@ -18,19 +18,19 @@ defmodule Adyen.Model.CloseAccountResponse do
 
   @type t :: %__MODULE__{
     :"accountCode" => String.t | nil,
-    :"invalidFields" => [Adyen.Model.ErrorFieldType.t] | nil,
+    :"invalidFields" => [AdyenForPlatforms:AccountAPI.Model.ErrorFieldType.t] | nil,
     :"pspReference" => String.t | nil,
     :"resultCode" => String.t | nil,
-    :"status" => Adyen.Model.Status2.t
+    :"status" => AdyenForPlatforms:AccountAPI.Model.Status2.t
   }
 end
 
-defimpl Poison.Decoder, for: Adyen.Model.CloseAccountResponse do
-  import Adyen.Deserializer
+defimpl Poison.Decoder, for: AdyenForPlatforms:AccountAPI.Model.CloseAccountResponse do
+  import AdyenForPlatforms:AccountAPI.Deserializer
   def decode(value, options) do
     value
-    |> deserialize(:"invalidFields", :list, Adyen.Model.ErrorFieldType, options)
-    |> deserialize(:"status", :struct, Adyen.Model.Status2, options)
+    |> deserialize(:"invalidFields", :list, AdyenForPlatforms:AccountAPI.Model.ErrorFieldType, options)
+    |> deserialize(:"status", :struct, AdyenForPlatforms:AccountAPI.Model.Status2, options)
   end
 end
 
